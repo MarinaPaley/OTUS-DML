@@ -1,0 +1,3 @@
+---cmd---
+--1. CREATE Folder BCP
+--2. bcp WideWorldImporters.Warehouse.Colors out E:\BCP\WideWorldImporters.Warehouse.Colors_Copy.txt -c -T
