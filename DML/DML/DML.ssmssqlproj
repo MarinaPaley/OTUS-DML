@@ -3,14 +3,17 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="DESKTOP-FEV6RUE:DESKTOP-FEV6RUE\Marina">
-          <Created>2023-11-29T16:33:36.2098729+03:00</Created>
+        <ConnectionNode Name="DIABLOALEX666\SQLEXPRESS:DIABLOALEX666\79164">
+          <Created>2024-04-25T13:16:58.4263439+03:00</Created>
           <Type>SQL</Type>
-          <Server>DESKTOP-FEV6RUE</Server>
+          <Server>DIABLOALEX666\SQLEXPRESS</Server>
           <UserName />
           <Authentication>Windows Authentication</Authentication>
           <InitialDB />
           <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>True</TrustServerCertificate>
+          <HostNameInServerCertificate />
+          <EncryptionOption>True</EncryptionOption>
           <ExecutionTimeout>0</ExecutionTimeout>
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
@@ -20,32 +23,32 @@
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
         <FileNode Name="CREATE PROC.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-FEV6RUE:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-FEV6RUE</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DIABLOALEX666\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DIABLOALEX666\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CREATE PROC.sql</FullPath>
         </FileNode>
         <FileNode Name="DELETE.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-FEV6RUE:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-FEV6RUE</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DIABLOALEX666\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DIABLOALEX666\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>DELETE.sql</FullPath>
         </FileNode>
         <FileNode Name="INSERT.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-FEV6RUE:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-FEV6RUE</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
           <AssociatedConnUserName />
           <FullPath>INSERT.sql</FullPath>
         </FileNode>
         <FileNode Name="SQLQuery1.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-FEV6RUE:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-FEV6RUE</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
           <AssociatedConnUserName />
           <FullPath>SQLQuery1.sql</FullPath>
         </FileNode>
         <FileNode Name="UPDATE.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-FEV6RUE:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-FEV6RUE</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
           <AssociatedConnUserName />
           <FullPath>UPDATE.sql</FullPath>
         </FileNode>

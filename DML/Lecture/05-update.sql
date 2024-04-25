@@ -1,5 +1,5 @@
 ﻿USE WideWorldImporters;
-DROP TABLE Purchasing.Suppliers_Copy;
+DROP TABLE IF EXISTS Purchasing.Suppliers_Copy;
 
 SELECT 
     s.BankAccountName

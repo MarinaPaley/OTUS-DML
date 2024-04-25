@@ -1,4 +1,4 @@
-﻿---INSERT INTO-----
+﻿---SELECT ... INTO-----
 USE Example;
 DROP TABLE IF EXISTS OrderLines_Copy;
 
