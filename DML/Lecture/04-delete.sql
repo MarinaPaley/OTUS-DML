@@ -32,14 +32,14 @@ SET @rowcount = @batchsize;
 WHILE @rowcount = @batchsize
 BEGIN
 	DELETE top (@batchsize) FROM Warehouse.Color_Copy
-	OUTPUT
+		OUTPUT
           deleted.ColorID
         , deleted.ColorName
         , deleted.LastEditedBy
         , deleted.ValidFrom
         , deleted.ValidTo
-    INTO Warehouse.Color_Archive
-    (
+		INTO Warehouse.Color_Archive
+		(
           ColorID
         , ColorName
         , LastEditedBy

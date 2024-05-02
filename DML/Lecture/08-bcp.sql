@@ -1,6 +1,7 @@
 ---cmd---
 --1. CREATE Folder BCP
 --2. bcp WideWorldImporters.Warehouse.Colors out E:\BCP\WideWorldImporters.Warehouse.Colors_Copy.txt -c -T
+--bcp WideWorldImporters.Warehouse.Colors OUT "E:\BCP\demo.txt" -T -S Diabloalex666\SQLEXPRESS -c
 
 /*
 Msg 15281, Level 16, State 1, Procedure master..xp_cmdshell, Line 1 [Batch Start Line 0]
@@ -28,8 +29,10 @@ PRINT @out;
 
 EXEC master..xp_cmdshell @out
 
+DROP TABLE IF EXISTS WideWorldImporters.Warehouse.Color_Copy;
+SELECT * INTO WideWorldImporters.Warehouse.Color_Copy FROM WideWorldImporters.Warehouse.Colors
+WHERE 1 = 2; 
 
-DELETE FROM WideWorldImporters.Warehouse.Color_Copy;
 
 DECLARE @in varchar(250);
 set @in = 'bcp WideWorldImporters.Warehouse.Color_Copy IN "E:\BCP\demo.txt" -T -S ' + @@SERVERNAME + ' -c';

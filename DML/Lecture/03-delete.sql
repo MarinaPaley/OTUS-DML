@@ -107,12 +107,15 @@ WHERE EXISTS (
 	WHERE [Application].Countries_Copy.CountryName = 
           [Application].Countries.CountryName);
 
+ ------------------
+ --Такой же результат можно получить:----
+ ------------------
 SELECT [Countries].CountryName
 FROM [Application].Countries_Copy AS [Copy]
 INNER JOIN [Application].Countries [Countries]
 ON [Countries].CountryName = [Copy].CountryName;
 
---Такой же результат можно получить:----
+
 DELETE FROM [Copy]
 --SELECT [Countries].CountryName
 FROM [Application].Countries_Copy AS [Copy]

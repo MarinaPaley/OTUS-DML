@@ -59,6 +59,9 @@ VALUES
  , (3, 3, 30, GETDATE(), 250)
  , (6, 1, 10, GETDATE(), 100);
 
+-----------------------------------------------------
+ ---Выборка по отдельному году в отдельную таблицу----
+
 USE WideWorldImporters;
 --DROP TABLE if exists Sales.Invoices_2016;
 
@@ -75,7 +78,9 @@ WHERE InvoiceDate >= '2016-01-01'
 
 select * from Sales.Invoices_2016;
 
+--------------------------
 ---OUTPUT AND ROWCOUNT-----------
+-------------------------
 USE WideWorldImporters;
 --DROP TABLE if exists Warehouse.Color_Copy;
 
@@ -89,7 +94,7 @@ INSERT INTO Warehouse.Colors
 		( ColorId
         , ColorName
         , LastEditedBy)
-	OUTPUT 
+	   OUTPUT 
            inserted.ColorId
          , inserted.ColorName
          , inserted.LastEditedBy
@@ -98,7 +103,7 @@ INSERT INTO Warehouse.Colors
           , ColorName
           , LastEditedBy)
 	OUTPUT inserted.*
-	VALUES
+VALUES
 		(NEXT VALUE FOR Sequences.ColorID
         ,N'Синий'
         , 1), 
@@ -141,3 +146,13 @@ INSERT INTO Warehouse.Color_Copy(
 EXEC WareHouse.GetColor 7;
 ------
 --ВОПРОСЫ?
+
+
+
+
+
+
+
+--DELETE
+--FROM WareHouse.Colors
+--WHERE ColorName IN ('Светло-Синий', 'Темно-Красный');
