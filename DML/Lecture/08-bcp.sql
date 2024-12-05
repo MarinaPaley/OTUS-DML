@@ -1,14 +1,22 @@
+SELECT COUNT(*)
+FROM WideWorldImporters.Sales.InvoiceLines;
+
 ---cmd---
---1. CREATE Folder BCP
---2. bcp WideWorldImporters.Warehouse.Colors out "E:\BCP\WideWorldImporters.Warehouse.Colors_Copy.txt" -c -T
---bcp WideWorldImporters.Warehouse.Colors OUT "E:\BCP\demo.txt" -T -S Diabloalex666\SQLEXPRESS -c
+--1. CREATE Folder BCP ( 
+--------cd E:\Marina\repos\ 
+--------mkdir test
+
+--2. bcp WideWorldImporters.Sales.InvoiceLines out ".\test\Copy.txt" -c -T
+-- bcp WideWorldImporters.Sales.InvoiceLines out ".\test\Copy.txt" -c -T -S Diabloalex666\SQLEXPRESS
+--ls tests
 --3. 
---DROP TABLE IF EXISTS WideWorldImporters.Warehouse.Color_Copy;
---SELECT * INTO WideWorldImporters.Warehouse.Color_Copy FROM WideWorldImporters.Warehouse.Colors
+--DROP TABLE IF EXISTS WideWorldImporters.Sales.InvoiceLines_Copy;
+--SELECT * INTO WideWorldImporters.Sales.InvoiceLines_Copy 
+--FROM WideWorldImporters.Sales.InvoiceLines
 --WHERE 1 = 2; 
---4. 'bcp WideWorldImporters.Warehouse.Color_Copy IN "E:\BCP\demo.txt" -T -S Diabloalex666\SQLEXPRESS -c
+--4. bcp WideWorldImporters.Sales.InvoiceLines_Copy IN ".\test\Copy.txt" -T -S Diabloalex666\SQLEXPRESS -c
 --SELECT *
---FROM WideWorldImporters.Warehouse.Color_Copy;
+--FROM WideWorldImporters.Sales.InvoiceLines_Copy;
 
 /*
 Msg 15281, Level 16, State 1, Procedure master..xp_cmdshell, Line 1 [Batch Start Line 0]
@@ -31,20 +39,21 @@ GO
 --SELECT @@SERVERNAME;
 
 DECLARE @out varchar(250);
-set @out = 'bcp WideWorldImporters.Warehouse.Colors OUT "E:\BCP\demo.txt" -T -S ' + @@SERVERNAME + ' -c';
+set @out = 'bcp WideWorldImporters.Sales.InvoiceLines OUT "E:\BCP\demo.txt" -T -c -S ' + @@SERVERNAME;
 PRINT @out;
 
 EXEC master..xp_cmdshell @out
 
-DROP TABLE IF EXISTS WideWorldImporters.Warehouse.Color_Copy;
-SELECT * INTO WideWorldImporters.Warehouse.Color_Copy FROM WideWorldImporters.Warehouse.Colors
+DROP TABLE IF EXISTS WideWorldImporters.Sales.InvoiceLines_Copy;
+SELECT * INTO WideWorldImporters.Sales.InvoiceLines_Copy
+FROM WideWorldImporters.Sales.InvoiceLines
 WHERE 1 = 2; 
 
 
 DECLARE @in varchar(250);
-set @in = 'bcp WideWorldImporters.Warehouse.Color_Copy IN "E:\BCP\demo.txt" -T -S ' + @@SERVERNAME + ' -c';
+set @in = 'bcp WideWorldImporters.Sales.InvoiceLines_Copy IN "E:\BCP\demo.txt" -T -c -S ' + @@SERVERNAME;
 
 EXEC master..xp_cmdshell @in;
 
 SELECT *
-FROM WideWorldImporters.Warehouse.Color_Copy;
+FROM WideWorldImporters.Sales.InvoiceLines_Copy;

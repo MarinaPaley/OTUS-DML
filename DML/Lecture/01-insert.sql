@@ -1,8 +1,8 @@
 ﻿USE Example;
---DELETE FROM OrderLines;
---DELETE FROM Products;
+DELETE FROM OrderLines;
+DELETE FROM Products;
 
-INSERT INTO Products VALUES
+INSERT INTO Products ([ID], [Name]) VALUES
  (1, N'Молоко')
 ,(2, N'Кефир')
 ,(3, N'Творог')
@@ -44,6 +44,11 @@ INSERT INTO OrderLines VALUES
 ,(3, 3, 30, GETDATE(), 300)
 ,(4, 4, 40, GETDATE(), 400)
 ,(5, 5, 50, GETdATE(), 500);
+
+SELECT o.[ID], p.[Name], o.[Date], o.[Price], o.[Count]
+FROM OrderLines o
+INNER JOIN Products p
+ON p.ID = o.ID_Product;
 
 --FK
 INSERT INTO OrderLines VALUES

@@ -14,8 +14,16 @@ SELECT * INTO Warehouse.Color_Copy
 FROM Warehouse.Colors;
 
 SELECT * FROM Warehouse.Colors;
-
 SELECT * FROM Warehouse.Color_Copy;
+
+declare @table TABLE(ColorID INT);
+
+DELETE FROM Warehouse.Color_Copy
+OUTPUT  deleted.ColorID
+INTO @table
+WHERE ColorID > 39;
+
+SELECT * FROM @table;
 
 ---Создаем пустую таблицу на основе ...--
 SELECT * INTO Warehouse.Color_Archive
@@ -23,13 +31,6 @@ FROM Warehouse.Colors
 WHERE 1 = 2;
 
 SELECT * FROM Warehouse.Color_Archive;
-
-declare @a TABLE(ColorID INT);
-DELETE FROM Warehouse.Color_Archive
-OUTPUT  deleted.ColorID
-INTO @a
-WHERE ColorID > 39;
-
 
 --создаем переменные
 DECLARE @rowcount INT,

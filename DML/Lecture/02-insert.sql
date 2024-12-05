@@ -81,14 +81,32 @@ select * from Sales.Invoices_2016;
 ---OUTPUT AND ROWCOUNT-----------
 -------------------------
 USE WideWorldImporters;
+
+INSERT INTO Warehouse.Colors
+		( ColorId
+        , ColorName
+        , LastEditedBy)
+	OUTPUT inserted.*
+VALUES
+		(NEXT VALUE FOR Sequences.ColorID
+        , N'Синий'
+        , 1), 
+		(NEXT VALUE FOR Sequences.ColorID
+        , N'Красный'
+        , 1);
+
+SELECT @@ROWCOUNT;
+
 --DROP TABLE if exists Warehouse.Color_Copy;
+
+--DELETE FROM Warehouse.Colors
+--WHERE ColorId > 36;
+
+------Логирование------
 
 SELECT ColorId, ColorName, LastEditedBy INTO Warehouse.Color_Copy
 FROM Warehouse.Colors
 WHERE 1 = 2;
-
---DELETE FROM Warehouse.Colors
---WHERE ColorId > 36;
 
 select * from Warehouse.Color_Copy;
 
@@ -107,10 +125,10 @@ INSERT INTO Warehouse.Colors
 	OUTPUT inserted.*
 VALUES
 		(NEXT VALUE FOR Sequences.ColorID
-        ,N'Синий'
+        , N'Синий'
         , 1), 
 		(NEXT VALUE FOR Sequences.ColorID
-        ,N'Красный'
+        , N'Красный'
         , 1);
 
 SELECT @@ROWCOUNT;
