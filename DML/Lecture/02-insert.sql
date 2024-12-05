@@ -10,8 +10,7 @@ FROM OrderLines;
 
 SELECT *
 FROM OrderLines_Copy;
-
----INSERT INTO (Columns)---
+----------------------
 USE WideWorldImporters;
 DROP TABLE IF EXISTS [Application].Countries_Copy;
 
@@ -36,9 +35,7 @@ SELECT * FROM [Application].Countries;
 GO
 SELECT * FROM [Application].Countries_Copy;
 
-
----INSERT TOP()
-
+---SELECT TOP(N) ... INTO-----
 USE Example;
 
 --DROP TABLE IF EXISTS OrderLines_Copy;
@@ -52,6 +49,8 @@ GO
 SELECT *
 FROM OrderLines_Copy
 ORDER BY ID;
+
+---INSERT INTO (Columns)---
 
 INSERT INTO OrderLines_Copy
 VALUES
@@ -87,6 +86,9 @@ USE WideWorldImporters;
 SELECT ColorId, ColorName, LastEditedBy INTO Warehouse.Color_Copy
 FROM Warehouse.Colors
 WHERE 1 = 2;
+
+--DELETE FROM Warehouse.Colors
+--WHERE ColorId > 36;
 
 select * from Warehouse.Color_Copy;
 

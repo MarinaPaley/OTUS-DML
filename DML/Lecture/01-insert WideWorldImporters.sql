@@ -3,6 +3,7 @@ USE WideWorldImporters;
 ---INSERT INTO---
 SELECT *
 FROM Warehouse.Colors;
+--DELETE FROM Warehouse.Colors WHERE ColorID > 36;
 
 INSERT INTO Warehouse.Colors
 	( ColorId
@@ -11,6 +12,14 @@ INSERT INTO Warehouse.Colors
 VALUES
 	(NEXT VALUE FOR Sequences.ColorID
     , N'Серобуромалиновый'
+    , 1);
+
+INSERT INTO Warehouse.Colors
+	(  ColorName
+    , LastEditedBy)
+VALUES
+	(
+     N'темно-ф'
     , 1);
 
 SELECT *

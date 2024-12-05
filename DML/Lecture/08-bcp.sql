@@ -1,7 +1,14 @@
 ---cmd---
 --1. CREATE Folder BCP
---2. bcp WideWorldImporters.Warehouse.Colors out E:\BCP\WideWorldImporters.Warehouse.Colors_Copy.txt -c -T
+--2. bcp WideWorldImporters.Warehouse.Colors out "E:\BCP\WideWorldImporters.Warehouse.Colors_Copy.txt" -c -T
 --bcp WideWorldImporters.Warehouse.Colors OUT "E:\BCP\demo.txt" -T -S Diabloalex666\SQLEXPRESS -c
+--3. 
+--DROP TABLE IF EXISTS WideWorldImporters.Warehouse.Color_Copy;
+--SELECT * INTO WideWorldImporters.Warehouse.Color_Copy FROM WideWorldImporters.Warehouse.Colors
+--WHERE 1 = 2; 
+--4. 'bcp WideWorldImporters.Warehouse.Color_Copy IN "E:\BCP\demo.txt" -T -S Diabloalex666\SQLEXPRESS -c
+--SELECT *
+--FROM WideWorldImporters.Warehouse.Color_Copy;
 
 /*
 Msg 15281, Level 16, State 1, Procedure master..xp_cmdshell, Line 1 [Batch Start Line 0]
@@ -21,7 +28,7 @@ GO
 RECONFIGURE;  
 GO  
 
-SELECT @@SERVERNAME;
+--SELECT @@SERVERNAME;
 
 DECLARE @out varchar(250);
 set @out = 'bcp WideWorldImporters.Warehouse.Colors OUT "E:\BCP\demo.txt" -T -S ' + @@SERVERNAME + ' -c';

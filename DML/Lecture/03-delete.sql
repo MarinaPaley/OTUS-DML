@@ -149,7 +149,8 @@ HAVING COUNT(*) > 1;
 SELECT
       CountryID
     , CountryName
-    , ROW_NUMBER() OVER (PARTITION BY CountryName ORDER BY CountryName) AS N
+    , ROW_NUMBER() OVER (
+		PARTITION BY CountryName ORDER BY CountryName) AS N
 FROM [Application].Countries_Copy;
 
 --или
