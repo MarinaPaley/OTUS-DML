@@ -10,6 +10,9 @@ FROM OrderLines;
 
 SELECT *
 FROM OrderLines_Copy;
+
+INSERT INTO OrderLines_Copy VALUES
+ (6, 100, 10, GETDATE(), 100);
 ----------------------
 USE WideWorldImporters;
 DROP TABLE IF EXISTS [Application].Countries_Copy;
@@ -17,7 +20,7 @@ DROP TABLE IF EXISTS [Application].Countries_Copy;
 SELECT * FROM [Application].Countries;
 
 SELECT 
-     CountryID
+      CountryID
     , CountryName
     , FormalName
     , IsoAlpha3Code

@@ -21,7 +21,7 @@ declare @table TABLE(ColorID INT);
 DELETE FROM Warehouse.Color_Copy
 OUTPUT  deleted.ColorID
 INTO @table
-WHERE ColorID > 39;
+WHERE ColorID > 16;
 
 SELECT * FROM @table;
 
